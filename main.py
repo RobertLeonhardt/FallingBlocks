@@ -16,15 +16,15 @@ from FallingBlocks import FallingBlocks
 pygame.init()
 
 # Define window 
-WINDOW_HEIGHT               = 600
-WINDOW_WIDTH                = 300
-WINDOW_TITLE                = "Falling Blocks Algorithm Study"
+WINDOW_HEIGHT = 600
+WINDOW_WIDTH = 300
+WINDOW_TITLE = "Falling Blocks Algorithm Study"
 
 # Define colors
-COLOR_MAIN_BACKGROUND       = (255,255,255)
+COLOR_MAIN_BACKGROUND = (255,255,255)
 
 # Define screen
-WINDOW                      = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
 # Set title
 pygame.display.set_caption(WINDOW_TITLE)
@@ -33,13 +33,13 @@ pygame.display.set_caption(WINDOW_TITLE)
 WINDOW.fill(COLOR_MAIN_BACKGROUND)
 
 # Init game
-falling_blocks              = FallingBlocks(WINDOW)
+falling_blocks = FallingBlocks(WINDOW)
 
 # Setup clock
-clock 			            = pygame.time.Clock()
+clock = pygame.time.Clock()
 
 # Set time elapsed
-time_elapsed 	            = 0
+time_elapsed = 0
 
 # Loop so the window doesnt close
 while True:
@@ -54,19 +54,19 @@ while True:
         if event.type == pygame.KEYDOWN:
 
             # KEY UP - Rotate all movable blocks
-            if event.key == pygame.K_UP: 	falling_blocks.rotate()
+            if event.key == pygame.K_UP: falling_blocks.rotate()
 
             # DOWN KEY - Move movable blocks down
-            if event.key == pygame.K_DOWN: 	falling_blocks.step_down()
+            if event.key == pygame.K_DOWN: falling_blocks.step_down()
 
             # LEFT KEY - Move movable blocks to left
-            if event.key == pygame.K_LEFT: 	falling_blocks.step_left()
+            if event.key == pygame.K_LEFT: falling_blocks.step_left()
 
             # RIGHT KEYs - Move movable blocks to right
             if event.key == pygame.K_RIGHT: falling_blocks.step_right()
 
             # S KEY -  Start new game (when game is lost)
-            if event.key == pygame.K_s: 	falling_blocks.start()
+            if event.key == pygame.K_s: falling_blocks.start()
 
     # Calc time since last click
     time_elapsed += clock.tick()
@@ -78,7 +78,7 @@ while True:
         falling_blocks.step_down()   
 
         # Reset time elapsed
-        time_elapsed = 0     
+        time_elapsed = 0       
 
     # Clean up view
     pygame.display.flip()
